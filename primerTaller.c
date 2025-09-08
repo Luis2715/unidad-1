@@ -3,8 +3,8 @@
 
 void llenarArray(int vector[MAX], int n);
 void mostrarArray(int vector[MAX], int n);
-void selectionSort(int vector[MAX], int n);
-
+void selectionSort(int arreglo[MAX], int n);
+void insertionSort(int arreglos[MAX], int n);
 int main() { 
     int vector[MAX]; 
     int opc;  
@@ -23,13 +23,16 @@ int main() {
             case 1: 
                 llenarArray (vector, MAX); 
                 break; 
-                case 2:
+            case 2:
                 mostrarArray (vector, MAX); 
                 break;
-                case 3:
+            case 3:
                 selectionSort(vector, MAX);
                 break;
-             case 5: {
+            case 4: 
+                insertionSort(vector, MAX);
+                 break;
+            case 5: {
                 char confirm;
                 printf(" Esta seguro que desea salir? (s/n): ");
                 scanf(" %c", &confirm);
@@ -58,12 +61,11 @@ void llenarArray(int vector[MAX], int n) {
     }
 }
 void mostrarArray(int vector[MAX], int n) {
-printf("Posicion cambiada:\n");
-for (int i = 0; i < n; i++){
- printf("%d",vector[i]);   
-
-}
-printf("\n");
+    printf("Posicion cambiada:\n");
+    for (int i = 0; i < n; i++){
+    printf("%d", vector[i]);
+    }
+    printf("\n");
 }
 
 void selectionSort(int arreglo[MAX], int n) {
@@ -83,4 +85,19 @@ void selectionSort(int arreglo[MAX], int n) {
         mostrarArray(arreglo, n);
     }
 }
+void insertionSort(int arreglo[MAX], int n) {
+    for (int i = 1; i < n; i++) {
+        int clave = arreglo[i];
+        int j = i - 1;
 
+        //  Desplazar hacia la derecha los elementos mayores que 'clave'
+        while (j >= 0 && arreglo[j] > clave) {
+            arreglo[j + 1] = arreglo[j];
+            j = j - 1;
+        }
+        arreglo[j + 1] = clave;
+
+        printf("\nInsertando %d en su lugar\n", clave);
+        mostrarArray(arreglo, n);
+    }
+}
