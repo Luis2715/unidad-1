@@ -1,12 +1,12 @@
 
-TALLER de ordenamiento de numeros
+💻 Taller de Ordenamiento de Números
 
 Integrantes:
 
 -luis ernesto oliveros campo
 -Jaider Stiven Advincula
 
-PASOS PARA LA SALUCION DEL TALLER
+PASOS PARA LA SOLUCION DEL TALLER
 
 Entrada de datos:
 lleanarArray
